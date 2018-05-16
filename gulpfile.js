@@ -37,3 +37,8 @@ gulp.task('scripts', function() {
       .pipe(gulp.dest('dist/js'));
   });
 
+  gulp.task('JSS', () =>
+  gulp.src('./src/js/*js')
+        .pipe(uglify())
+      .pipe(gulp.dest('dist/js'))
+);
