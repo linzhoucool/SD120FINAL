@@ -3,7 +3,7 @@ const autoprefixer = require('gulp-autoprefixer');
 let cleanCSS = require('gulp-clean-css');
 const imagemin = require('gulp-imagemin');
 const babel = require('gulp-babel');
-
+var concat = require('gulp-concat');
 
 
 
@@ -31,4 +31,9 @@ gulp.task('JS', () =>
         .pipe(gulp.dest('dist/js'))
 );
 
+gulp.task('scripts', function() {
+    return gulp.src('./src/js/*js')
+      .pipe(concat('main.js'))
+      .pipe(gulp.dest('dist/js'));
+  });
 
