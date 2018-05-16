@@ -42,3 +42,7 @@ gulp.task('scripts', function() {
         .pipe(uglify())
       .pipe(gulp.dest('dist/js'))
 );
+
+  gulp.task('default',['CSS','IMAGES','JS','scripts'],function(){
+      gulp.watch('./src/css/*.css',['css']);
+  });
